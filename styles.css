@@ -121,12 +121,10 @@ h3 { font: var(--title-1); }
 .section-head { display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: var(--space-200); margin-bottom: var(--space-300); }
 .services, .branches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-200); }
 .service, .branches article, .price-list { border: 1px solid var(--border-primary); border-radius: var(--radius-16); background: var(--surface-primary); min-width: 0; }
-.service { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto 1fr; align-items: start; gap: var(--space-200); padding: var(--space-300); }
+.service { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: var(--space-200); padding: var(--space-300); }
 .service h3 { overflow-wrap: anywhere; }
 .tile-icon { display: grid; place-items: center; width: 48px; height: 48px; background: var(--surface-accent); color: var(--text-brand); border-radius: var(--radius-8); }
 .service p, .branches p { margin-top: var(--space-50); color: var(--text-secondary); font: var(--body-6); }
-.service-price { grid-column: 1 / -1; align-self: end; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--space-50) var(--space-100); padding: var(--space-75) var(--space-100); border-radius: var(--radius-8); background: var(--surface-subtle); color: var(--text-secondary); font: var(--body-6); }
-.service-price dd { color: var(--text-primary); font: var(--body-1); font-variant-numeric: tabular-nums; }
 .price-band { background: var(--surface-primary); border-block: 1px solid var(--border-primary); }
 .price-layout { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: var(--space-700); padding-block: var(--space-700); }
 .price-layout .section-description, .about .section-description { margin-block: var(--space-200) var(--space-100); }
@@ -134,6 +132,7 @@ h3 { font: var(--title-1); }
 .price-list > div { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-200); padding: var(--space-200) var(--space-300); }
 .price-list > div + div { position: relative; }
 .price-list > div + div::before { content: ''; position: absolute; inset: 0 0 auto; height: 1px; background: var(--border-primary); }
+.price-list dt { min-width: 0; overflow-wrap: anywhere; }
 .price-list dd { white-space: nowrap; font: var(--body-1); font-variant-numeric: tabular-nums; }
 .about { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); align-items: center; gap: var(--space-600); }
 .clinic-photo { overflow: hidden; border-radius: var(--radius-24); background: var(--surface-primary); }
