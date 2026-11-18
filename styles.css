@@ -80,7 +80,14 @@ svg { width: 24px; height: 24px; fill: currentColor; flex: none; }
 .header-inner, .footer-inner { min-height: var(--space-800); display: flex; align-items: center; justify-content: space-between; gap: var(--space-300); }
 .brand { display: flex; flex: none; align-items: center; width: 192px; padding: var(--space-50); background: var(--brand-surface); border-radius: var(--radius-8); }
 .brand img { width: 100%; height: auto; }
-.nav, .header-actions { display: flex; align-items: center; gap: var(--space-300); }
+.header-inner { gap: var(--space-200); }
+.nav, .header-actions, .header-contact, .social-links { display: flex; align-items: center; }
+.nav { gap: var(--space-200); }
+.header-contact, .social-links { gap: var(--space-75); }
+.social-link { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--border-primary); border-radius: var(--radius-12); }
+.social-link:hover { border-color: var(--border-control); background: var(--surface-subtle); }
+.social-link-vk { color: #0077ff; }
+.social-link-telegram { color: #0088cc; }
 .nav a, .top-phone { display: inline-flex; align-items: center; min-height: 44px; font: var(--title-4); white-space: nowrap; }
 .nav a:hover, .top-phone:hover, .footer-inner > a:not(.brand):hover { text-decoration: underline; text-underline-offset: var(--space-50); }
 .top-phone { font-variant-numeric: tabular-nums; }
@@ -171,8 +178,6 @@ h3 { font: var(--title-1); }
 .branch-actions a { display: inline-flex; align-items: center; gap: var(--space-75); min-height: 44px; font: var(--button-sm); font-variant-numeric: tabular-nums; }
 .branch-actions a[href^="https:"] { color: var(--text-brand); }
 .branches a:hover { text-decoration: underline; text-underline-offset: var(--space-50); }
-.social-links { display: flex; flex-wrap: wrap; gap: var(--space-100); margin-top: var(--space-300); }
-.social-links .text-link { border-color: var(--border-control); }
 .footer { background: var(--surface-primary); }
 .footer-inner > a:not(.brand) { font: var(--title-4); }
 dialog { width: min(480px, calc(100% - 2 * var(--space-200))); max-height: calc(100% - 2 * var(--space-200)); padding: var(--space-300); border: 1px solid var(--border-primary); border-radius: var(--radius-24); background: var(--surface-primary); color: var(--text-primary); }
@@ -190,21 +195,25 @@ dialog h2 + p { margin-block: var(--space-100) var(--space-300); color: var(--te
 
 @media (max-width: 1100px) {
   .wrap { width: calc(100% - 2 * var(--space-300)); }
-  .top-phone { display: none; }
   .hero-copy { padding: var(--space-400) var(--space-300); }
   h1 { font: var(--heading-2); }
 }
 
-@media (max-width: 900px) {
-  .wrap { width: calc(100% - 2 * var(--space-200)); }
+@media (max-width: 1180px) {
   .header-inner { min-height: var(--space-700); gap: var(--space-75); position: relative; }
-  .brand { width: 144px; }
-  .header-actions { min-width: 0; margin-left: auto; }
+  .header .brand { width: 144px; }
+  .header-contact { margin-left: auto; }
+  .header-actions { min-width: 0; }
   .header .menu-toggle { display: grid; order: 3; }
   .nav { display: none; position: absolute; z-index: 2; inset: calc(100% + var(--space-50)) 0 auto; padding: var(--space-75); background: var(--surface-primary); border: 1px solid var(--border-primary); border-radius: var(--radius-16); }
   .menu-toggle[aria-expanded="true"] + .nav { display: grid; gap: var(--space-50); }
   .nav a { padding: var(--space-75) var(--space-100); border-radius: var(--radius-8); }
   .nav a:hover { background: var(--surface-subtle); }
+}
+
+@media (max-width: 900px) {
+  .wrap { width: calc(100% - 2 * var(--space-200)); }
+  .brand { width: 144px; }
   .hero { gap: var(--space-200); margin-top: var(--space-200); }
   .hero-copy { padding: var(--space-300) var(--space-100); }
   h1, h2 { font: var(--heading-3); }
@@ -221,7 +230,16 @@ dialog h2 + p { margin-block: var(--space-100) var(--space-300); color: var(--te
 }
 
 @media (max-width: 700px) {
-  .header .brand { width: clamp(96px, 30vw, 120px); }
+  .header-inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "brand booking menu" "contact contact contact";
+    padding-block: var(--space-75);
+  }
+  .header .brand { grid-area: brand; width: clamp(96px, 30vw, 120px); }
+  .header .menu-toggle { grid-area: menu; }
+  .header-contact { grid-area: contact; justify-self: end; margin-left: 0; }
+  .header-actions { grid-area: booking; justify-self: end; }
   .hero { grid-template-columns: minmax(0, 1fr); gap: var(--space-100); margin-top: var(--space-100); padding: var(--space-100); }
   .hero-copy { padding: var(--space-75) var(--space-50) var(--space-50); }
   .hero-description { margin-top: var(--space-100); }
