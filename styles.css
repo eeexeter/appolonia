@@ -84,10 +84,10 @@ svg { width: 24px; height: 24px; fill: currentColor; flex: none; }
 .nav, .header-actions, .header-contact, .social-links { display: flex; align-items: center; }
 .nav { gap: var(--space-200); }
 .header-contact, .social-links { gap: var(--space-75); }
-.social-link { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--border-primary); border-radius: var(--radius-12); }
-.social-link:hover { border-color: var(--border-control); background: var(--surface-subtle); }
-.social-link-vk { color: #0077ff; }
-.social-link-telegram { color: #0088cc; }
+.social-link { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--border-primary); border-radius: var(--radius-12); color: var(--text-secondary); }
+.social-link svg { fill: none; stroke: currentColor; stroke-width: 1.35; stroke-linejoin: round; }
+.social-link path { vector-effect: non-scaling-stroke; }
+.social-link:hover { border-color: var(--border-control); color: var(--text-primary); }
 .nav a, .top-phone { display: inline-flex; align-items: center; min-height: 44px; font: var(--title-4); white-space: nowrap; }
 .nav a:hover, .top-phone:hover, .footer-inner > a:not(.brand):hover { text-decoration: underline; text-underline-offset: var(--space-50); }
 .top-phone { font-variant-numeric: tabular-nums; }
