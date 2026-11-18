@@ -171,6 +171,8 @@ h3 { font: var(--title-1); }
 .branch-actions a { display: inline-flex; align-items: center; gap: var(--space-75); min-height: 44px; font: var(--button-sm); font-variant-numeric: tabular-nums; }
 .branch-actions a[href^="https:"] { color: var(--text-brand); }
 .branches a:hover { text-decoration: underline; text-underline-offset: var(--space-50); }
+.social-links { display: flex; flex-wrap: wrap; gap: var(--space-100); margin-top: var(--space-300); }
+.social-links .text-link { border-color: var(--border-control); }
 .footer { background: var(--surface-primary); }
 .footer-inner > a:not(.brand) { font: var(--title-4); }
 dialog { width: min(480px, calc(100% - 2 * var(--space-200))); max-height: calc(100% - 2 * var(--space-200)); padding: var(--space-300); border: 1px solid var(--border-primary); border-radius: var(--radius-24); background: var(--surface-primary); color: var(--text-primary); }
