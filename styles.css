@@ -83,9 +83,9 @@ svg { width: 24px; height: 24px; fill: currentColor; flex: none; }
 .header-inner { gap: var(--space-200); }
 .nav, .header-actions, .header-contact, .social-links { display: flex; align-items: center; }
 .nav { gap: var(--space-200); }
-.header-contact, .social-links { gap: var(--space-75); }
+.header-actions, .social-links { gap: var(--space-75); }
 .social-link { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--border-primary); border-radius: var(--radius-12); color: var(--text-secondary); }
-.social-link svg { fill: none; stroke: currentColor; stroke-width: 1.35; stroke-linejoin: round; }
+.social-link svg { fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linejoin: round; }
 .social-link path { vector-effect: non-scaling-stroke; }
 .social-link:hover { border-color: var(--border-control); color: var(--text-primary); }
 .nav a, .top-phone { display: inline-flex; align-items: center; min-height: 44px; font: var(--title-4); white-space: nowrap; }
@@ -233,7 +233,7 @@ dialog h2 + p { margin-block: var(--space-100) var(--space-300); color: var(--te
   .header-inner {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr) auto;
-    grid-template-areas: "brand booking menu" "contact contact contact";
+    grid-template-areas: "brand contact menu" "booking booking booking";
     padding-block: var(--space-75);
   }
   .header .brand { grid-area: brand; width: clamp(96px, 30vw, 120px); }
